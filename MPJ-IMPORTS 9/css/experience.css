@@ -1,0 +1,113 @@
+/* MPJ Imports — evolução da interface, sem bibliotecas. */
+:root{--xp-lime:#c9f44b;--xp-lime-deep:#b4e83b;--xp-dark:#1c1d1a;--xp-text:#282a29;--xp-muted:#6f706d;--xp-line:#e5e5e1;--xp-panel:#fafaf8;--xp-shadow:0 18px 45px rgba(19,23,15,.09)}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{color:var(--xp-text)}
+button,a,input,select{touch-action:manipulation}
+button{cursor:pointer}
+:focus-visible{outline:3px solid #99bf26!important;outline-offset:3px}
+/* Ações verde-limão, preservando os fundos neutros. */
+.btn-lime,.xp-whatsapp,.xp-quick-buy,.xp-mobile-buy button,.xp-compare-tray>button:nth-child(2){background:var(--xp-lime)!important;color:#1b2211!important;border:1px solid var(--xp-lime)!important;transition:background .18s,transform .18s,box-shadow .18s!important}
+.btn-lime:hover,.xp-whatsapp:hover,.xp-quick-buy:hover,.xp-mobile-buy button:hover,.xp-compare-tray>button:nth-child(2):hover{background:var(--xp-lime-deep)!important;color:#18210b!important;transform:translateY(-2px);box-shadow:0 9px 22px #aaca5455}
+.head-action,.nav-promo,.retail-department,.xp-detail-actions button{transition:transform .2s ease,background .2s ease,color .2s ease}
+.head-action:hover{transform:translateY(-2px)}
+.site-header{z-index:60}
+.xp-card{border-radius:18px!important;overflow:hidden!important;box-shadow:0 1px 2px #00000009!important;transition:transform .3s cubic-bezier(.16,.88,.23,1),box-shadow .3s,border-color .3s!important}
+.xp-card:hover,.xp-card:focus-within{transform:translateY(-5px)!important;box-shadow:var(--xp-shadow)!important;border-color:#d5d6d0!important}
+.xp-card .item-frame{overflow:hidden;background:#f6f5f2}
+.xp-card .item-photo>img{transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .35s ease!important}
+.xp-card .item-photo .xp-hover-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none}
+.xp-card:hover .item-photo>img:first-child,.xp-card:focus-within .item-photo>img:first-child{transform:scale(1.06)}
+.xp-card:hover .item-photo .xp-hover-photo,.xp-card:focus-within .item-photo .xp-hover-photo{opacity:1}
+.xp-photo-tag{font:700 9px Rubik,sans-serif;letter-spacing:.11em;padding:7px 9px;border-radius:8px;background:rgba(255,255,255,.9);color:#464843}
+.xp-card-actions{display:flex;position:absolute;left:9px;right:9px;bottom:9px;gap:7px;z-index:5;transform:translateY(120%);transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.xp-card:hover .xp-card-actions,.xp-card:focus-within .xp-card-actions{transform:translateY(0)}
+.xp-card-actions button{flex:1;display:flex;gap:6px;align-items:center;justify-content:center;border:0;border-radius:10px;padding:12px 8px;background:#fefefdf4;color:#252724;font:700 11px Rubik,sans-serif;backdrop-filter:blur(8px);box-shadow:0 5px 12px #0002;min-height:42px}
+.xp-card-actions button:first-child{background:var(--xp-lime);color:#1b2410}
+.xp-card-actions button:hover{filter:brightness(.94)}
+.xp-card-actions .active{background:#272a23;color:#fff}
+.xp-card .item-details{padding:17px 16px 20px}
+.xp-card .item-title{font:700 15px/1.4 Rubik,sans-serif;color:#262822;min-height:40px}
+.xp-card .item-kicker{color:#75766e}
+.xp-card .item-prices strong{font-size:21px}
+.xp-card .installments{font-size:11px;color:#72766c}
+/* Barra flutuante de comparação. */
+.xp-compare-tray{position:fixed;left:50%;transform:translate(-50%,120%);bottom:18px;z-index:130;width:min(730px,calc(100vw - 30px));display:flex;align-items:center;gap:12px;padding:12px 15px;background:#1f221d;color:#fff;box-shadow:0 18px 50px #10151155;border:1px solid #4b4e48;border-radius:18px;opacity:0;pointer-events:none;transition:transform .28s,opacity .28s}
+.xp-compare-tray.visible{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.xp-compare-tray>div{flex:1;min-width:0}.xp-compare-tray b{display:block;font:700 13px Rubik,sans-serif}.xp-compare-tray span{display:block;color:#d4d6d1;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.xp-compare-tray button{border:0;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:8px;font-weight:750}
+.xp-compare-tray button:last-child{padding:11px;background:#353934;color:white}
+/* Diálogos nativos: Esc, tecla Tab e foco administrados por JS. */
+.xp-modal{width:min(970px,calc(100vw - 25px));max-height:min(92vh,820px);border:1px solid #e3e5df;border-radius:24px;padding:22px;color:#1b2118;box-shadow:0 40px 100px #10151065;background:#fff;overscroll-behavior:contain}
+.xp-modal::backdrop,.size-modal::backdrop,.zoom-modal::backdrop{background:#141713ad;backdrop-filter:blur(4px)}
+.xp-modal-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #eceee8;padding-bottom:14px;margin-bottom:18px;color:#6d7068;font:800 11px Rubik,sans-serif;letter-spacing:.08em}
+.xp-modal-heading button{width:42px;height:42px;display:grid;place-items:center;border:0;border-radius:50%;background:#f4f5f1}
+.xp-quick-layout{display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);gap:26px;align-items:start}
+.xp-quick-media{background:#f6f6f3;border-radius:18px;overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:7px}
+.xp-quick-media>img{height:380px;width:100%;object-fit:contain}
+.xp-quick-thumbs,.xp-gallery-thumbs{display:flex;gap:8px;padding:7px}
+.xp-quick-thumbs button,.xp-gallery-thumb{width:72px;height:78px;background:#fff;border:1px solid #e5e5e2;border-radius:10px;padding:6px;overflow:hidden}
+.xp-quick-thumbs button.active,.xp-gallery-thumb.active{border:2px solid #607337}
+.xp-quick-thumbs img,.xp-gallery-thumb img{width:100%;height:100%;object-fit:contain}
+.xp-quick-copy h2{font:800 clamp(24px,3vw,38px)/1.11 'Bricolage Grotesque',Rubik,sans-serif;letter-spacing:-.04em;margin:9px 0 11px}
+.xp-quick-copy>small{color:#6b6c66;font-size:11px;text-transform:uppercase;font-weight:700}
+.xp-quick-copy>p{font-size:13px;line-height:1.7;color:#5d605a;max-height:100px;overflow:auto}
+.xp-price{display:block;font:800 30px Rubik,sans-serif;margin:13px 0 0}
+.xp-price-note{font-size:11px;color:#777b72}
+.xp-fieldset{border:0;padding:0;margin:22px 0 0;min-width:0}
+.xp-fieldset legend{font:700 12px Rubik,sans-serif;color:#41453c;margin-bottom:10px}
+.xp-option-list,.size-choices{display:flex;flex-wrap:wrap;gap:8px}
+.xp-option-list button,.size-choices label span{border-radius:10px!important;border:1px solid #daddd6!important;background:#fff!important;color:#20271d!important;min-height:42px;padding:10px 14px;font:700 12px Rubik,sans-serif}
+.xp-option-list button.selected,.size-choices label input:checked+span{background:#272d21!important;color:#fff!important;border-color:#272d21!important}
+.xp-option-list button:focus-visible{outline:2px solid #bdde67}
+.xp-quick-qty{display:flex;align-items:center;gap:12px;margin-top:16px}
+.xp-quick-qty label{font-size:12px;font-weight:700}.xp-quick-qty input{width:76px;border:1px solid #deded8;padding:9px 12px;border-radius:9px}
+.xp-size-note{display:block;color:#777b72;font-size:12px;line-height:1.6;margin-top:9px}
+.xp-validation{color:#bb3333;font-size:12px;min-height:18px;margin:8px 0}
+.xp-quick-buy{width:100%;border-radius:12px;min-height:50px;display:flex;justify-content:center;align-items:center;gap:10px;font:800 13px Rubik,sans-serif;margin-top:4px}
+.xp-quick-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.xp-quick-footer a,.xp-quick-footer button{display:flex;align-items:center;gap:8px;color:#242823;background:none;border:none;font:700 12px Rubik,sans-serif;text-decoration:underline;text-underline-offset:4px}
+.xp-compare-dialog{width:min(1100px,calc(100vw - 20px))}
+.xp-compare-dialog h2{font:800 28px 'Bricolage Grotesque',sans-serif;margin:12px 0}
+.xp-compare-scroll{overflow:auto;max-width:100%;border:1px solid #e4e5df;border-radius:14px}
+.xp-comparison{width:100%;border-collapse:collapse;min-width:560px}
+.xp-comparison th,.xp-comparison td{text-align:left;padding:12px;min-width:115px;border-bottom:1px solid #edf0e9;font-size:12px}
+.xp-comparison th:first-child{background:#fafbf8;min-width:120px}
+.xp-comparison thead th{vertical-align:bottom}
+.xp-comparison thead img{display:block;width:105px;height:115px;object-fit:contain;margin:0 auto 8px}
+.xp-comparison thead span{display:block;font-weight:700}
+.xp-comparison thead button{background:#efefec;border:0;border-radius:7px;padding:7px;margin:5px 0}
+.xp-comparison tr:nth-child(even){background:#fafaf8}
+/* Produto, galeria, tamanhos, ações */
+.xp-detail-wrap{padding-top:18px}.xp-detail-shot{border-radius:20px;overflow:hidden;background:#f7f7f4!important;position:relative;touch-action:pan-y}
+.xp-detail-shot .detail-img{object-fit:contain;max-height:570px}
+.xp-gallery-prev,.xp-gallery-next{position:absolute;top:47%;width:40px;height:40px;border-radius:50%;border:1px solid #ddd;background:#fff;box-shadow:0 5px 17px #0002;font-size:28px}
+.xp-gallery-prev{left:9px}.xp-gallery-next{right:9px}
+.xp-detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.xp-detail-actions button{display:flex;align-items:center;gap:6px;background:#f5f6f2;border:1px solid #e1e3dd;border-radius:11px;padding:10px 12px;color:#333;min-height:44px;font:700 12px Rubik,sans-serif}
+.xp-detail-actions button:hover{transform:translateY(-2px);background:#ecefe5}
+.xp-purchase-form .size-choices label{cursor:pointer}
+.xp-purchase-form .size-choices input{position:absolute;opacity:0;width:1px;height:1px}
+.xp-purchase-form .size-choices input:focus-visible+span{outline:3px solid #a1cb48}
+.xp-purchase-form .qty-line .buy-btn{border-radius:12px;min-height:50px}
+.xp-mobile-buy{display:none}
+.xp-line-sum{font:800 12px Rubik,sans-serif;margin-left:auto;color:#41463e}
+.xp-freight-note,.xp-whatsapp-note{font-size:11px;line-height:1.55;color:#6e716a;margin:9px 0}
+.xp-continue{display:block;text-align:center;padding:12px;color:#32362e;font-weight:700;text-decoration:underline;font-size:12px}
+.xp-recent{margin-top:50px;margin-bottom:60px}
+.xp-section-title span{font:800 11px Rubik,sans-serif;letter-spacing:.1em;color:#65724a}
+.xp-section-title h2{font:800 clamp(27px,3vw,43px) 'Bricolage Grotesque',sans-serif;letter-spacing:-.04em;margin:9px 0}
+.xp-section-title p{font-size:12px;color:#74776e;margin-bottom:20px}
+.xp-guide{border-collapse:collapse}.xp-guide td{border-bottom:1px solid #ddd;padding:10px}
+.retail-products{scroll-margin-top:150px}
+/* Interactions also visible without hover: touch, keyboard and reduced motion. */
+@media (hover:none),(pointer:coarse){.xp-card-actions{transform:translateY(0)}.xp-card-actions button{font-size:10px;padding:10px 6px}}
+@media(max-width:780px){
+ .xp-quick-layout{grid-template-columns:1fr;gap:14px}.xp-modal{width:calc(100vw - 14px);max-height:94dvh;padding:14px;border-radius:18px}.xp-quick-media>img{height:230px}
+ .xp-quick-copy h2{font-size:24px}.xp-card-actions{transform:translateY(0);gap:5px}.xp-card-actions button{font-size:10px;min-height:40px;padding:8px 5px}
+ .xp-compare-tray{bottom:12px;padding:8px 10px;gap:6px;border-radius:12px}.xp-compare-tray button{padding:9px 8px;font-size:11px}.xp-compare-tray span{max-width:110px}
+ .xp-mobile-buy{display:flex;align-items:center;gap:15px;justify-content:space-between;position:sticky;bottom:0;background:#fffefdf0;backdrop-filter:blur(16px);border-top:1px solid #eceee6;padding:12px 16px;margin:10px -16px 15px;z-index:22;box-shadow:0 -8px 25px #00000009}
+ .xp-mobile-buy span{font:800 17px Rubik,sans-serif}.xp-mobile-buy button{border-radius:10px;padding:13px;font-weight:800;display:flex;align-items:center;gap:8px}
+ .xp-detail-actions{margin-bottom:15px}
+}
+@media(max-width:420px){.xp-card-actions{flex-wrap:wrap}.xp-card-actions button{flex:1 1 46%}.xp-modal-heading{font-size:9px}.xp-quick-media>img{height:200px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.xp-card:hover{transform:none!important}}
